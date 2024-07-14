@@ -28,11 +28,21 @@ const sizes = {
 /**
  * Camera
  */
-const camera = new THREE.PerspectiveCamera(
-  /* Field of view: */ 75,
-  /* Aspect Ratio: */ sizes.width / sizes.height,
-  /* Near: */ 0.1,
-  /* Far: */ 100
+// const camera = new THREE.PerspectiveCamera(
+//   /* Field of view: */ 75,
+//   /* Aspect Ratio: */ sizes.width / sizes.height,
+//   /* Near: */ 0.1,
+//   /* Far: */ 100
+// );
+
+const aspectRatio = sizes.width / sizes.height;
+const camera = new THREE.OrthographicCamera(
+  -1 * aspectRatio,
+  1 * aspectRatio,
+  1,
+  -1,
+  0.1,
+  100
 );
 camera.position.x = 2;
 camera.position.y = 2;
